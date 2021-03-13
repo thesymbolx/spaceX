@@ -14,7 +14,9 @@ data class LaunchInfo(
         val unixTimeStamp: Long,
         @SerializedName("launch_success")
         val launchSuccess: Boolean,
-        val links: Links
+        val links: Links,
+        @SerializedName("launch_year")
+        val launchYear: Int
 )
 
 data class Rocket(

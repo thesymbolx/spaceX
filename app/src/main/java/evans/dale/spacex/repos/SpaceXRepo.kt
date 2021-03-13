@@ -15,7 +15,7 @@ class SpaceXRepo(
 
     fun getLaunches(): Flow<PagingData<LaunchInfo>> =
             Pager(
-                    PagingConfig(50)
+                    PagingConfig(50, enablePlaceholders = true)
             ) {
                 SpaceXPagingSource(spaceXService)
             }.flow

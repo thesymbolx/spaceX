@@ -1,4 +1,4 @@
-package evans.dale.spacex
+package evans.dale.spacex.home
 
 import android.app.Application
 import android.view.LayoutInflater

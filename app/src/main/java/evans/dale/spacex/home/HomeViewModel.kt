@@ -1,8 +1,9 @@
-package evans.dale.spacex
+package evans.dale.spacex.home
 
 import android.app.Application
 import androidx.lifecycle.*
 import androidx.paging.cachedIn
+import evans.dale.spacex.R
 import evans.dale.spacex.repos.SpaceXRepo
 import evans.dale.spacex.service.CompanyInfo
 import kotlinx.coroutines.CoroutineScope
@@ -11,9 +12,9 @@ import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.util.*
 
-class MainActivityVM(
-        application: Application,
-        private val spaceXRepo: SpaceXRepo
+class HomeViewModel(
+    application: Application,
+    private val spaceXRepo: SpaceXRepo
 ) : AndroidViewModel(application), LifecycleObserver {
 
     val companyInfo = MutableLiveData<String>()
@@ -35,8 +36,7 @@ class MainActivityVM(
                 launchSites.toString(),
                 NumberFormat.getCurrencyInstance(Locale.US).format(valuation)
             )
-    }
+        }
 
     fun getLaunchItems() = spaceXRepo.getLaunches().cachedIn(viewModelScope)
-
 }

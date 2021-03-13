@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="evans.dale.spacex.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_filterDialog"
+            app:destination="@id/filterDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/filterDialog"
+        android:name="evans.dale.spacex.home.FilterDialog"
+        android:label="FilterDialog" />
+</navigation>

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="evans.dale.spacex.LaunchVM" />
+            type="evans.dale.spacex.home.LaunchVM" />
 
         <import type="android.view.View"/>
     </data>

@@ -1,7 +1,8 @@
-package evans.dale.spacex
+package evans.dale.spacex.home
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import evans.dale.spacex.R
 import java.time.*
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit

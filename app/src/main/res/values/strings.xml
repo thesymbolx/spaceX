@@ -16,4 +16,12 @@
     <string name="launch_since">since</string>
     <string name="launch_from">from</string>
     <string name="launch_day">%sd %s launch </string>
+
+    <!-- Toolbar -->
+    <string name="toolbar_filter">Filter</string>
+
+    <!-- Filter Dialog -->
+    <string name="filter_title">Filter by Year</string>
+    <string name="filter_acs">ACS</string>
+    <string name="filter_desc">DESC</string>
 </resources>
