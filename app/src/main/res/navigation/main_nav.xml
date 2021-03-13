@@ -13,6 +13,6 @@
     </fragment>
     <dialog
         android:id="@+id/filterDialog"
-        android:name="evans.dale.spacex.home.FilterDialog"
+        android:name="evans.dale.spacex.home.MediaDialog"
         android:label="FilterDialog" />
 </navigation>

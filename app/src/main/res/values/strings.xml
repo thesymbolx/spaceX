@@ -21,7 +21,8 @@
     <string name="toolbar_filter">Filter</string>
 
     <!-- Filter Dialog -->
-    <string name="filter_title">Filter by Year</string>
-    <string name="filter_acs">ACS</string>
-    <string name="filter_desc">DESC</string>
+    <string name="filter_title">Choose Media</string>
+    <string name="wiki">Wiki</string>
+    <string name="video">Video</string>
+    <string name="article">Article</string>
 </resources>

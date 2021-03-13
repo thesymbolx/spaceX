@@ -28,5 +28,10 @@ data class Rocket(
 
 data class Links(
         @SerializedName("mission_patch_small")
-        val smallMissionPatch: String
+        val smallMissionPatch: String,
+        val wikipedia: String,
+        @SerializedName("video_link")
+        val video: String,
+        @SerializedName("article_link")
+        val articleLink: String
 )

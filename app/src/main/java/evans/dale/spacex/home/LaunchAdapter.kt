@@ -2,6 +2,7 @@ package evans.dale.spacex.home
 
 import android.app.Application
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -9,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import evans.dale.spacex.databinding.LaunchItemBinding
 import evans.dale.spacex.service.LaunchInfo
 
-class LaunchAdapter(diffCallback: DiffUtil.ItemCallback<LaunchInfo>, val application: Application) :
+class LaunchAdapter(
+    diffCallback: DiffUtil.ItemCallback<LaunchInfo>, val application: Application) :
         PagingDataAdapter<LaunchInfo, LaunchAdapter.ViewHolder>(diffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -31,7 +33,6 @@ class LaunchAdapter(diffCallback: DiffUtil.ItemCallback<LaunchInfo>, val applica
                         rocket.type,
                         application)
             }
-
         }
     }
 
