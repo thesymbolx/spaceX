@@ -33,8 +33,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@{viewModel.companyInfo}"
-            android:fontFamily="sans-serif"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:layout_margin="8dp"/>
 
         <TextView

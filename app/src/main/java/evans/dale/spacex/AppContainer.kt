@@ -1,5 +1,6 @@
 package evans.dale.spacex
 
+import com.google.gson.GsonBuilder
 import evans.dale.spacex.repos.SpaceXRepo
 import evans.dale.spacex.service.SpaceXService
 import okhttp3.OkHttpClient
@@ -10,10 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class AppContainer {
 
     private val retrofit: Retrofit by lazy {
+        val gson = GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create()
         Retrofit.Builder()
             .baseUrl("https://api.spacexdata.com/v3/")
             .callFactory(OkHttpClient.Builder().build())
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 

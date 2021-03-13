@@ -8,6 +8,8 @@ import evans.dale.spacex.service.CompanyInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.NumberFormat
+import java.util.*
 
 class MainActivityVM(
         application: Application,
@@ -27,10 +29,13 @@ class MainActivityVM(
         info.run {
             getApplication<Application>().getString(
                 R.string.company_info,
-                name, founder, founded.toString(), employees, launchSites.toString(), valuation.toString()
+                name, founder,
+                founded.toString(),
+                employees,
+                launchSites.toString(),
+                NumberFormat.getCurrencyInstance(Locale.US).format(valuation)
             )
     }
-
 
     fun getLaunchItems() = spaceXRepo.getLaunches().cachedIn(viewModelScope)
 

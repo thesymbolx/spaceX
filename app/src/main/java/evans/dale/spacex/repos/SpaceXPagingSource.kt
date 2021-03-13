@@ -1,5 +1,6 @@
 package evans.dale.spacex.repos
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import evans.dale.spacex.service.LaunchInfo
@@ -18,7 +19,7 @@ class SpaceXPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, LaunchInfo> {
         val nextPageNumber = params.key ?: 0
-        val response = spaceXService.getLaunches(10, nextPageNumber)
+        val response = spaceXService.getLaunches(50, nextPageNumber)
 
         return LoadResult.Page(
                 data = response,

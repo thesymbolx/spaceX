@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainActivityVM by viewModels {
         ViewModelInjectors.MainActivityInjector(
-            application,
-            (application as SpaceXApplication).appContainer.spaceXRepo
+                application,
+                (application as SpaceXApplication).appContainer.spaceXRepo
         )
     }
 
@@ -32,11 +32,6 @@ class MainActivity : AppCompatActivity() {
             viewModel = this@MainActivity.viewModel
 
             createRecycler(this)
-
-//            viewModel?.launchesInfo?.observe(this@MainActivity) {
-//                launchesAdapter.items = it
-//                launchesAdapter.notifyDataSetChanged()
-//            }
         }
         setContentView(binding.root)
     }
@@ -44,14 +39,13 @@ class MainActivity : AppCompatActivity() {
     private fun createRecycler(binding: ActivityMainBinding) = binding.apply {
         val launchesAdapter = LaunchAdapter(object : DiffUtil.ItemCallback<LaunchInfo>() {
             override fun areItemsTheSame(oldItem: LaunchInfo, newItem: LaunchInfo): Boolean {
-                // Id is unique.
-                return oldItem == newItem
+                return oldItem === newItem
             }
 
             override fun areContentsTheSame(oldItem: LaunchInfo, newItem: LaunchInfo): Boolean {
                 return oldItem == newItem
             }
-        })
+        }, application)
         recycler.adapter = launchesAdapter
         recycler.layoutManager = LinearLayoutManager(this@MainActivity)
 
