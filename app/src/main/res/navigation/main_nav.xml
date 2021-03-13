@@ -8,11 +8,21 @@
         android:name="evans.dale.spacex.home.HomeFragment"
         android:label="HomeFragment" >
         <action
-            android:id="@+id/action_homeFragment_to_filterDialog"
-            app:destination="@id/filterDialog" />
+            android:id="@+id/action_homeFragment_to_mediaDialog"
+            app:destination="@id/mediaDialog" />
     </fragment>
     <dialog
-        android:id="@+id/filterDialog"
+        android:id="@+id/mediaDialog"
         android:name="evans.dale.spacex.home.MediaDialog"
-        android:label="FilterDialog" />
+        android:label="FilterDialog" >
+        <argument
+            android:name="videoUrl"
+            app:argType="string" />
+        <argument
+            android:name="articleUrl"
+            app:argType="string" />
+        <argument
+            android:name="wikiUrl"
+            app:argType="string" />
+    </dialog>
 </navigation>

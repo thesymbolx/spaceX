@@ -11,7 +11,9 @@ import evans.dale.spacex.databinding.LaunchItemBinding
 import evans.dale.spacex.service.LaunchInfo
 
 class LaunchAdapter(
-    diffCallback: DiffUtil.ItemCallback<LaunchInfo>, val application: Application) :
+    diffCallback: DiffUtil.ItemCallback<LaunchInfo>,
+    val application: Application,
+    val itemClick: (LaunchInfo) -> Unit) :
         PagingDataAdapter<LaunchInfo, LaunchAdapter.ViewHolder>(diffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -33,6 +35,10 @@ class LaunchAdapter(
                         rocket.type,
                         application)
             }
+        }
+
+        holder.binding.root.setOnClickListener {
+            itemClick(snapshot().items[position])
         }
     }
 
